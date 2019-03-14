@@ -21,14 +21,14 @@
             <id>releases</id>
             <!-- 这个ID需要与你的release仓库的Repository ID一致  -->
             <url>
-                http://114.115.180.225:18888/nexus/content/repositories/releases
+                http://1.1.1.1:18888/nexus/content/repositories/releases
             </url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <!-- 这个ID需要与你的snapshots仓库的Repository ID一致  -->
             <url>
-                http://114.115.180.225:18888/nexus/content/repositories/snapshots
+                http://1.1.1.1:18888/nexus/content/repositories/snapshots
             </url>
         </snapshotRepository>
     </distributionManagement>
