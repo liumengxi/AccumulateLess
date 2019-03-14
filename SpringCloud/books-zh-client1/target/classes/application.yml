@@ -1,0 +1,21 @@
+server:
+  port: 8101
+spring:
+  application:
+    #应用名称
+    name: eureka-client1
+eureka:
+  client:
+    serviceUrl:
+      #服务注册中心地址
+#      defaultZone: http://localhost:8800/eureka/
+      #注册至高可用eureka服务器中，多个服务器需用，隔开
+      defaultZone: http://node1:8801/eureka/,http://node2:8802/eureka/
+management:
+ endpoints:
+  web:
+    exposure:
+      include: "*"
+    cors:
+      allowed-origins: "*"
+      allowed-methods: "*"

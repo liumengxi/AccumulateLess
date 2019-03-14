@@ -1,0 +1,29 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: service-turbine
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node1:8801/eureka/,http://node2:8802/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+turbine:
+  #整个eureka-client,eureka-client1两个微服务的断路器监控
+  app-config: eureka-client,eureka-client1
+  aggregator:
+    clusterConfig: default
+  clusterNameExpression: new String("default")
+  instanceUrlSuffix:
+    default: actuator/hystrix.stream
+  combine-host-port: true

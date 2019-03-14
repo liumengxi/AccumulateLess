@@ -1,0 +1,8 @@
+server:
+  port: 9110
+spring:
+  zipkin:
+    #设置zipkin服务器地址
+    base-url: http://127.0.0.1:9411
+  application:
+    name: zipkin-server

@@ -1,0 +1,62 @@
+server:
+  port: 8888
+spring:
+  profiles:
+    #after_route
+    #header_route
+    #cookie_route
+    #host_route
+    #method_route
+    #path_route
+    active: query_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        #after_route
+        #header_route
+        #cookie_route
+        #host_route
+        #method_route
+        #path_route
+        #query_route
+        - id: query_route
+          uri: https://www.baidu.com/
+          predicates:
+          #1、当请求时间在这个配置的时间之后，请求会被路由到http://httpbin.org:80/get
+          #如果请求时间在这个配置之前，就会出现404
+          #- After=2019-02-15T16:42:47.789-07:00[America/Denver]
+          #2、Header Route Predicate Factory 请求头过滤
+          #需要两个参数 一个是header名，一个是header值。该值可以为一个正则
+          #测试方法 curl -H 'X-Request-Id:1' localhost:8081
+          #- Header=X-Request-Id, \d+
+          #3、Cookie Route Predicate Factory cookie过滤
+          #Cookie Route Predicate Factory需要2个参数，一个时cookie名字，另一个时值，可以为正则表达式。
+          #它用于匹配请求中，带有该名称的cookie和cookie匹配正则表达式的请求
+          #4、Host Route Predicate Factory Host过滤
+          #Host Route Predicate Factory需要一个参数即hostname，它可以使用. * 等去匹配host。
+          #这个参数会匹配请求头中的host的值，一致，则请求正确转发
+          #5、Method Route Predicate Factory method过滤
+          #Method Route Predicate Factory 需要一个参数，即请求的类型。比如GET类型的请求都转发到此路由
+          #6、Path Route Predicate Factory path过滤
+          #Path Route Predicate Factory 需要一个参数: 一个spel表达式，应用匹配路径。
+          #7、Query Route Predicate Factory query 参数过滤
+          #Query Route Predicate Factory 需要2个参数:一个参数名和一个参数值的正则表达式
+            #After=2017-01-20T17:42:47.789-07:00[America/Denver]
+            #- Header=X-Request-Id, \d+
+            #- Cookie=name, forezp
+            #- Host=www.baidu.com
+            #- Method=GET
+            #- Path=/foo/{segment}
+            #- Query=foo,ba.
+               - Query=foo
+        #after_route
+        #header_route
+        #cookie_route
+        #host_route
+        #method_route
+        #path_route
+        #query_route
+  profiles: query_route

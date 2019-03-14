@@ -1,0 +1,26 @@
+#Eureka通过运行多个实例，使其更具有高可用性。
+#事实上，这是它默认的属性，你需要做的就是给对等的实例一个合法的关联serviceurl。
+server:
+  port: 8802
+spring:
+  application:
+    #使用eureka高可用，spring.application.name的名称需要保持一致
+    name: eureka-server
+  profiles:
+    active: node2
+eureka:
+  instance:
+#    prefer-ip-address: true
+      hostname: node2
+  client:
+    serviceUrl:
+      #如需要三台eureka服务器，需要两两进行注册
+      defaultZone: http://node1:8801/eureka/
+    #搭建高可用集群，一定要设置为true或者不写,否则会出现unavailable-replicas
+    fetch-registry: true
+    #搭建高可用集群，一定要设置为true或者不写,否则会出现unavailable-replicas
+    register-with-eureka: true
+    #启动命令...
+    #启动高可用集群文件时需对应配置文件
+    #启动命令 java -jar app.jar --spring.profiles.active=node1
+

@@ -1,0 +1,44 @@
+server:
+  port: 7200
+spring:
+  application:
+    name: eureka-config-client
+  cloud:
+    config:
+      #指明仓库所属分支
+      label: master
+      #设置环境所属配置文件
+      #dev开发环境配置文件
+      #test测试环境
+      #pro正式环境
+      profile: dev
+      #指明配置文件服务器地址
+      #uri: http://127.0.0.1:7100/
+      #从配置服务器读取配置文件
+      discovery:
+        enabled: true
+        #服务ID
+        service-id: eureka-config-server
+    #配置消息总线
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  #配置rabbitmq
+  rabbitmq:
+    #rabbitmq地址
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      #服务注册中心地址
+      defaultZone: http://localhost:8800/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

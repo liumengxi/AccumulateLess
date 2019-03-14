@@ -1,0 +1,27 @@
+server:
+  port: 7100
+spring:
+  application:
+    name: eureka-config-server
+  #设置配置文件访问的git路径 以及分支名称
+  cloud:
+    config:
+      server:
+        git:
+          #配置需要访问配置文件的文件路径
+          uri: https://github.com/liumengxi/config
+          #配置需要访问配置文件名称路径
+          search-paths: server-config
+          #git用户名
+          username:
+          #git密码
+          password:
+        #分支名称
+      label: master
+#注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      #服务注册中心地址
+      defaultZone: http://localhost:8800/eureka/
+

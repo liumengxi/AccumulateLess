@@ -1,0 +1,13 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8800/eureka/
+server:
+  port: 9100
+spring:
+  application:
+    name: eureka-feign
+#打开断路器，idea没有提示，不影响，可正常使用
+feign:
+ hystrix:
+    enabled: true

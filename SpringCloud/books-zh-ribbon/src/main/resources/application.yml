@@ -1,0 +1,12 @@
+#ribbon 端口号
+server:
+  port: 9000
+#应用名称
+spring:
+  application:
+    name: eureka-ribbon
+eureka:
+  client:
+    service-url:
+      #服务注册中心地址
+      defaultZone: http://localhost:8801/eureka/,http://localhost:8802/eureka/
