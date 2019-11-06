@@ -2,7 +2,6 @@ package production;
 
 /**
  * @Description 馍馍
- * @Author wb-yzh498839@alibaba-inc.com
  * @date 2019-11-05 17:15
  * @Copyright 2019 Alibaba.com All right reserved.
  */
