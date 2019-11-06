@@ -4,7 +4,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * @Description 运行方法
- * @Author wb-yzh498839@alibaba-inc.com
  * @date 2019-11-05 17:46
  * @Copyright 2019 Alibaba.com All right reserved.
  */
