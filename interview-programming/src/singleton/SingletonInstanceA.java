@@ -2,7 +2,6 @@ package singleton;
 
 /**
  * @Description 单列实现A
- * @Author wb-yzh498839@alibaba-inc.com
  * @date 2019-11-05 16:01
  * @Copyright 2019 Alibaba.com All right reserved.
  */
