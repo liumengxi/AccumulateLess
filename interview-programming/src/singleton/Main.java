@@ -1,8 +1,7 @@
 package singleton;
 
 /**
- * @Description TODO(这里用一句话描述这个类)
- * @Author wb-yzh498839@alibaba-inc.com
+ * @Description 启动类
  * @date 2019-11-05 16:11
  * @Copyright 2019 Alibaba.com All right reserved.
  */
